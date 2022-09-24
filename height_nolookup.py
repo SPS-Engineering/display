@@ -43,12 +43,12 @@ inner_sprite = displayio.TileGrid(
 splash.append(inner_sprite)
 
 # Draw some label text
-text1 = "How Tall Are You?"  
-text_area = label.Label(terminalio.FONT, text=text1, color=0xFFFFFF, x=8, y=8)
+text1 = "Your height is:"  
+text_area = label.Label(terminalio.FONT, text=text1, color=0xFFFFFF, x=20, y=13)
 splash.append(text_area)
-text2 = "179cm"
+text2 = "1.79 m"
 text_area2 = label.Label(
-    terminalio.FONT, text=text2, scale=3, color=0xFFFFFF, x=8, y=38
+    terminalio.FONT, text=text2, scale=3, color=0xFFFFFF, x=10, y=38
 )
 splash.append(text_area2)
 
