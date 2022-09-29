@@ -48,11 +48,12 @@ splash.append(inner_sprite)
 text1 = "Your height is:"
 text_area = label.Label(terminalio.FONT, text=text1, color=0xFFFFFF, x=20, y=13)
 splash.append(text_area)
-text2 = "179cm"
+text2 = "{}cm".format(vl53.distance)
 text_area2 = label.Label(
     terminalio.FONT, text=text2, scale=3, color=0xFFFFFF, x=10, y=38
 )
 splash.append(text_area2)
+
 
 # Time of Flight from this tutorial 
 # https://learn.adafruit.com/adafruit-vl53l1x?view=all#python-circuitpython
@@ -80,8 +81,9 @@ print("--------------------")
 vl53.start_ranging()
 
 while True:
-    pass  #this makes the screen work
+    pass
     if vl53.data_ready:
-        print("Distance: {} cm".format(vl53.distance))  #this works fine in serial
+        print("Distance: {} cm".format(vl53.distance))
         vl53.clear_interrupt()
+        text_area2.text = "{}cm".format(vl53.distance)
         time.sleep(1.0)
